@@ -32,9 +32,9 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
   }
 
   return (
-    <div className={cn("flex space-x-1 my-6", className)}>
+    <div className={cn("flex justify-center items-center my-6 w-full px-4", className)}>
       <motion.div
-        className="overflow-hidden pb-2"
+        className="overflow-hidden pb-2 max-w-full"
         initial={{
           width: "0%",
         }}
@@ -48,9 +48,10 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
         }}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           style={{
-            whiteSpace: "nowrap",
+            whiteSpace: "normal",
+            wordBreak: "break-word",
           }}
         >
           {renderWords()}{" "}
@@ -69,7 +70,7 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
           repeatType: "reverse",
         }}
         className={cn(
-          "block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-primary",
+          "block rounded-sm w-[4px] h-6 sm:h-8 md:h-12 lg:h-16 xl:h-20 bg-primary flex-shrink-0",
           cursorClassName
         )}
       ></motion.span>

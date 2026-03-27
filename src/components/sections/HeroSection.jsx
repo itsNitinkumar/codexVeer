@@ -85,9 +85,9 @@ export default function HeroSection() {
           key={index}
           initial={{ opacity: 0, x: 0, y: 0 }}
           animate={{
-            opacity: [0.3, 0.6, 0.3],
-            x: [0, x, 0],
-            y: [0, y, 0],
+            opacity: [0.2, 0.5, 0.2],
+            x: [0, x * 0.3, 0],
+            y: [0, y * 0.3, 0],
           }}
           transition={{
             duration: 8,
@@ -95,14 +95,14 @@ export default function HeroSection() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute hidden lg:block"
+          className="absolute"
           style={{
             left: `${30 + index * 20}%`,
             top: `${30 + index * 10}%`,
           }}
         >
-          <div className="p-4 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50">
-            <Icon size={32} className="text-primary" />
+          <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50">
+            <Icon size={20} className="sm:w-8 sm:h-8 text-primary" />
           </div>
         </motion.div>
       ))}
@@ -124,7 +124,7 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          <TypewriterEffect words={words} className="text-5xl md:text-7xl lg:text-8xl" />
+          <TypewriterEffect words={words} />
 
           <motion.p
             variants={itemVariants}
